@@ -17,9 +17,8 @@ import viewsRouterMongo from './routes/views-router-mongodb.js'
 import chatRouterMongo from './routes/chat-router-mongodb.js'
 import sessionRouter from './routes/sessions-router.js'
 
-const DB = 'ecommerce'
 const PORT = 8080;
-const MONGO = `mongodb+srv://admin:admin123@cluster0.m8kzlrt.mongodb.net/${ DB }?retryWrites=true&w=majority`
+const MONGO = `mongodb+srv://victor123:galaxy123@victor.fcbuhio.mongodb.net/?retryWrites=true&w=majority`
 
 const app = express()
 const conection = mongoose.connect(MONGO);
