@@ -72,7 +72,7 @@ router.get('/current', authSession, (req,res) => {
     })
 })
 
-router.get('/github', passport.authenticate('github'))
+router.get('/github', passport.authenticate('github')),
 
 router.get('/githubcallback', passport.authenticate('github', { failureRedirect: '/login' }), async (req,res) => {
     req.session.user = req.user
