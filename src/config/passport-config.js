@@ -7,7 +7,7 @@ import GitHubStrategy from 'passport-github2'
 
 const LocalStrategy = local.Strategy;
 
-const initializePassport = () => {
+export const initializePassport = () => {
     passport.use('register', new LocalStrategy(
         { passReqToCallback: true, usernameField: 'email' }, 
         async (req, username, password, done) =>{
@@ -66,7 +66,9 @@ const initializePassport = () => {
         }
 
     }))
+}
 
+export const initGithub = () => {
     passport.use('github', new GitHubStrategy({
         clientID:'Iv1.8c76f5511d5dd00d',
         clientSecret:'5ef1bba4837cf85dca8c9a99740a5f1fdfdbb1c1',
@@ -99,4 +101,3 @@ const initializePassport = () => {
         }
     }))
 }
-export default initializePassport;

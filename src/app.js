@@ -7,7 +7,7 @@ import passport from 'passport'
 import MongoStore from 'connect-mongo'
 
 import __dirname from './utils.js'
-import initializePassport from './config/passport-config.js'
+import { initializePassport, initGithub } from './config/passport-config.js'
 
 import productModel from './dao/mongodb/models/products-model.js'
 import chatModel from './dao/mongodb/models/chat-model.js'
@@ -48,6 +48,7 @@ app.use(session({
 }))
 
 initializePassport()
+initGithub()
 app.use(passport.initialize())
 app.use(passport.session())
 
